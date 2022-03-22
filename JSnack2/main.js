@@ -102,13 +102,27 @@ console.table(zucchineLunghe);
 
 //Infine stampa separatamente quanto pesano i due gruppi di zucchine.
 let sommaZucchineCorte = 0;
+let sommaZucchineLunghe = 0;
 
-for (let y=0; y<zucchineCorte.length;y++){
-  
-  const pesoZucchineCorte = zucchineCorte[y].peso;
-  sommaZucchineCorte += Math.round(pesoZucchineCorte);
 
+
+sommaDelPeso(zucchineCorte, sommaZucchineCorte, "corte");
+sommaDelPeso(zucchineLunghe, sommaZucchineLunghe, "lunghe");
+
+
+
+
+
+//funzione per sommare il peso
+
+function sommaDelPeso (gruppozucchine, sommaZucchine, lunghezza) {
+
+  for (let y=0; y<gruppozucchine.length;y++){
   
+    const pesoZucchine = gruppozucchine[y].peso;
+    sommaZucchine += Math.round(pesoZucchine);
+
+  }
+  console.log(`Il peso totale delle zucchine ${lunghezza} è ${sommaZucchine} Kg`);
 }
 
-console.log(sommaZucchineCorte);
