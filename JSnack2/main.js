@@ -78,24 +78,37 @@ const zucchineLunghe = [];
 
 for(let i=0; i<zucchine.length; i++){
 
-  const lunghezzaZucchina = zucchine[i].lunghezza;
+  const zucchina = zucchine[i];
 
-  misuraZucchine(lunghezzaZucchina);
+  misuraZucchine(zucchina);
+
   
-
 }
 
 //funzione per dividere le zucchine in base alla lunghezza
-function misuraZucchine (lunghezzaZucchina){
-  if(lunghezzaZucchina <= 15){
+function misuraZucchine (zucchina){
+  if(zucchina.lunghezza <= 15){
 
-    zucchineCorte.push(lunghezzaZucchina);
+    zucchineCorte.push(zucchina);
   }else{
 
-    zucchineLunghe.push(lunghezzaZucchina);
+    zucchineLunghe.push(zucchina);
   }
 
 }
 
-console.log(zucchineCorte);
-console.log(zucchineLunghe);
+console.table(zucchineCorte);
+console.table(zucchineLunghe);
+
+//Infine stampa separatamente quanto pesano i due gruppi di zucchine.
+let sommaZucchineCorte = 0;
+
+for (let y=0; y<zucchineCorte.length;y++){
+  
+  const pesoZucchineCorte = zucchineCorte[y].peso;
+  sommaZucchineCorte += Math.round(pesoZucchineCorte);
+
+  
+}
+
+console.log(sommaZucchineCorte);
