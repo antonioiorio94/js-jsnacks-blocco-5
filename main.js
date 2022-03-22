@@ -15,55 +15,55 @@ const zucchine = [
   },
   {
     varietà: "Zucchino romanesco",
-    peso: 0.9,
+    peso: 0.5,
     lunghezza: 30,
 
   },
   {
     varietà: "Zucchino fiorentino",
-    peso: 1.2,
+    peso: 1.3,
     lunghezza: 25,
 
   },
   {
     varietà: "Zucchina napoletana",
-    peso: 0.5,
+    peso: 1.5,
     lunghezza: 33,
 
   },
   {
     varietà: "Zucchine tonde",
-    peso: 1,
+    peso: 0.5,
     lunghezza: 24,
 
   },
   {
     varietà: "Zucchina pâtisson",
-    peso: 0.6,
+    peso: 0.4,
     lunghezza: 23,
 
   },
   {
     varietà: "Zucchina Crookneck",
-    peso: 1.5,
+    peso: 1,
     lunghezza: 28,
 
   },
   {
     varietà: "Zucchino rugoso friulano",
-    peso: 1.3,
+    peso: 0.4,
     lunghezza: 19,
 
   },
   {
     varietà: "Zucchine trombetta",
-    peso: 0.9,
+    peso: 1.2,
     lunghezza: 31,
 
   },
   {
     varietà: "Zucchino giallo",
-    peso: 0.8,
+    peso: 0.6,
     lunghezza: 22,
 
   },
@@ -71,5 +71,23 @@ const zucchine = [
 
 ]
 
+//prova conosole.table
+let { peso , lunghezza} = zucchine;
+console.table(zucchine)
 
-//
+
+totPesoZucchine ();
+
+
+
+//creazione funzione
+function totPesoZucchine (){
+
+    let somma = 0;
+    for(i=0; i<zucchine.length; i++){
+      let pesoZucchina = zucchine[i].peso ;
+      somma += Math.round (pesoZucchina) ;
+  }
+
+  console.log(`Il peso complessivo è ${somma} Kg`)
+}
